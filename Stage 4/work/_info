@@ -1,0 +1,115 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 3
+vpe
+Z0 !s110 1788552776
+!i10b 1
+!s100 I8lVg:D@<75BGOZcSO=[J3
+IX;oLh:?>`J@89V1il5PE`1
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 4
+w1786573713
+8C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 4/Quartus_Project/pe.v
+FC:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 4/Quartus_Project/pe.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1788552776.000000
+!s107 C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 4/Quartus_Project/pe.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 4/Quartus_Project/pe.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vsystolic_array
+R0
+!i10b 1
+!s100 ni;goRDQhVV:eme4;nYF13
+Ig>=2PmAFYG9gZV:9l@gkm2
+R1
+R2
+w1788551872
+8C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 4/Quartus_Project/systolic_array.v
+FC:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 4/Quartus_Project/systolic_array.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 4/Quartus_Project/systolic_array.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 4/Quartus_Project/systolic_array.v|
+!i113 1
+R5
+R6
+vsystolic_array_2x2
+!s110 1788545697
+!i10b 1
+!s100 XCKTLNmmGAz86B=OhF?a43
+I6eXX4L<gN0Z6[hYR4HJT`3
+R1
+R2
+w1788542933
+8C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 4/Quartus_Project/systolic_array_2x2.v
+FC:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 4/Quartus_Project/systolic_array_2x2.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1788545697.000000
+!s107 C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 4/Quartus_Project/systolic_array_2x2.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 4/Quartus_Project/systolic_array_2x2.v|
+!i113 1
+R5
+R6
+vsystolic_array_2x2_tb
+!s110 1788545696
+!i10b 1
+!s100 z[T^7@X]GbZ1>Xn?iM4Mn1
+I[E[D@E[6`YUo2i297NlR01
+R1
+R2
+w1788544246
+8C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 4/Quartus_Project/systolic_array_2x2_tb.v
+FC:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 4/Quartus_Project/systolic_array_2x2_tb.v
+L0 3
+R3
+r1
+!s85 0
+31
+!s108 1788545696.000000
+!s107 C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 4/Quartus_Project/systolic_array_2x2_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 4/Quartus_Project/systolic_array_2x2_tb.v|
+!i113 1
+R5
+R6
+vsystolic_array_8x8_tb
+R0
+!i10b 1
+!s100 B4MT7>g[b`NoagLH4nWz]1
+ILBHSSPh=RQiaLD>ZAF4XB1
+R1
+R2
+w1788552548
+8C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 4/Quartus_Project/systolic_array_8x8_tb.v
+FC:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 4/Quartus_Project/systolic_array_8x8_tb.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 4/Quartus_Project/systolic_array_8x8_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 4/Quartus_Project/systolic_array_8x8_tb.v|
+!i113 1
+R5
+R6

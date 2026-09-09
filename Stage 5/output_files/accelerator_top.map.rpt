@@ -1,0 +1,1216 @@
+Analysis & Synthesis report for accelerator_top
+Sat Sep 05 13:06:16 2026
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis DSP Block Usage Summary
+ 10. State Machine - |accelerator_top|controller:CONTROLLER|state
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Registers Packed Into Inferred Megafunctions
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for c_buffer:C_BUFFER|altsyncram:mem_rtl_0|altsyncram_60q1:auto_generated
+ 16. Source assignments for b_buffer:B_BUFFER|altsyncram:mem_rtl_0|altsyncram_g0q1:auto_generated
+ 17. Source assignments for a_buffer:A_BUFFER|altsyncram:mem_rtl_0|altsyncram_g0q1:auto_generated
+ 18. Parameter Settings for User Entity Instance: Top-level Entity: |accelerator_top
+ 19. Parameter Settings for User Entity Instance: a_buffer:A_BUFFER
+ 20. Parameter Settings for User Entity Instance: b_buffer:B_BUFFER
+ 21. Parameter Settings for User Entity Instance: controller:CONTROLLER
+ 22. Parameter Settings for User Entity Instance: systolic_array:ARRAY
+ 23. Parameter Settings for User Entity Instance: c_buffer:C_BUFFER
+ 24. Parameter Settings for Inferred Entity Instance: c_buffer:C_BUFFER|altsyncram:mem_rtl_0
+ 25. Parameter Settings for Inferred Entity Instance: b_buffer:B_BUFFER|altsyncram:mem_rtl_0
+ 26. Parameter Settings for Inferred Entity Instance: a_buffer:A_BUFFER|altsyncram:mem_rtl_0
+ 27. altsyncram Parameter Settings by Entity Instance
+ 28. Port Connectivity Checks: "systolic_array:ARRAY|pe:ROW[7].COL[7].PE"
+ 29. Port Connectivity Checks: "systolic_array:ARRAY|pe:ROW[7].COL[6].PE"
+ 30. Port Connectivity Checks: "systolic_array:ARRAY|pe:ROW[7].COL[5].PE"
+ 31. Port Connectivity Checks: "systolic_array:ARRAY|pe:ROW[7].COL[4].PE"
+ 32. Port Connectivity Checks: "systolic_array:ARRAY|pe:ROW[7].COL[3].PE"
+ 33. Port Connectivity Checks: "systolic_array:ARRAY|pe:ROW[7].COL[2].PE"
+ 34. Port Connectivity Checks: "systolic_array:ARRAY|pe:ROW[7].COL[1].PE"
+ 35. Port Connectivity Checks: "systolic_array:ARRAY|pe:ROW[7].COL[0].PE"
+ 36. Port Connectivity Checks: "systolic_array:ARRAY|pe:ROW[6].COL[7].PE"
+ 37. Port Connectivity Checks: "systolic_array:ARRAY|pe:ROW[5].COL[7].PE"
+ 38. Port Connectivity Checks: "systolic_array:ARRAY|pe:ROW[4].COL[7].PE"
+ 39. Port Connectivity Checks: "systolic_array:ARRAY|pe:ROW[3].COL[7].PE"
+ 40. Port Connectivity Checks: "systolic_array:ARRAY|pe:ROW[2].COL[7].PE"
+ 41. Port Connectivity Checks: "systolic_array:ARRAY|pe:ROW[1].COL[7].PE"
+ 42. Port Connectivity Checks: "systolic_array:ARRAY|pe:ROW[0].COL[7].PE"
+ 43. Post-Synthesis Netlist Statistics for Top Partition
+ 44. Elapsed Time Per Partition
+ 45. Analysis & Synthesis Messages
+ 46. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sat Sep 05 13:06:15 2026       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; accelerator_top                             ;
+; Top-level Entity Name           ; accelerator_top                             ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 3611                                        ;
+; Total pins                      ; 186                                         ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 10,240                                      ;
+; Total DSP Blocks                ; 64                                          ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; accelerator_top    ; accelerator_top    ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 14          ;
+;                            ;             ;
+; Average used               ; 1.01        ;
+; Maximum used               ; 14          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.1%      ;
+;     Processor 4            ;   0.1%      ;
+;     Processor 5            ;   0.1%      ;
+;     Processor 6            ;   0.1%      ;
+;     Processor 7            ;   0.1%      ;
+;     Processor 8            ;   0.1%      ;
+;     Processors 9-14        ;   0.1%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                     ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                 ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
+; systolic_array.v                 ; yes             ; User Verilog HDL File        ; C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/systolic_array.v       ;         ;
+; pe.v                             ; yes             ; User Verilog HDL File        ; C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/pe.v                   ;         ;
+; controller.v                     ; yes             ; User Verilog HDL File        ; C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/controller.v           ;         ;
+; c_buffer.v                       ; yes             ; User Verilog HDL File        ; C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/c_buffer.v             ;         ;
+; b_buffer.v                       ; yes             ; User Verilog HDL File        ; C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/b_buffer.v             ;         ;
+; accelerator_top.v                ; yes             ; User Verilog HDL File        ; C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/accelerator_top.v      ;         ;
+; a_buffer.v                       ; yes             ; User Verilog HDL File        ; C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/a_buffer.v             ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_60q1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/db/altsyncram_60q1.tdf ;         ;
+; db/altsyncram_g0q1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/db/altsyncram_g0q1.tdf ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 2154      ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 759       ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 691       ;
+;     -- 5 input functions                    ; 4         ;
+;     -- 4 input functions                    ; 34        ;
+;     -- <=3 input functions                  ; 30        ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 3611      ;
+;                                             ;           ;
+; I/O pins                                    ; 186       ;
+; Total MLAB memory bits                      ; 0         ;
+; Total block memory bits                     ; 10240     ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 64        ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 3771      ;
+; Total fan-out                               ; 23693     ;
+; Average fan-out                             ; 4.77      ;
++---------------------------------------------+-----------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                          ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                    ; Entity Name     ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------+-----------------+--------------+
+; |accelerator_top                          ; 759 (673)           ; 3611 (0)                  ; 10240             ; 64         ; 186  ; 0            ; |accelerator_top                                                                       ; accelerator_top ; work         ;
+;    |a_buffer:A_BUFFER|                    ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |accelerator_top|a_buffer:A_BUFFER                                                     ; a_buffer        ; work         ;
+;       |altsyncram:mem_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |accelerator_top|a_buffer:A_BUFFER|altsyncram:mem_rtl_0                                ; altsyncram      ; work         ;
+;          |altsyncram_g0q1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |accelerator_top|a_buffer:A_BUFFER|altsyncram:mem_rtl_0|altsyncram_g0q1:auto_generated ; altsyncram_g0q1 ; work         ;
+;    |b_buffer:B_BUFFER|                    ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |accelerator_top|b_buffer:B_BUFFER                                                     ; b_buffer        ; work         ;
+;       |altsyncram:mem_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |accelerator_top|b_buffer:B_BUFFER|altsyncram:mem_rtl_0                                ; altsyncram      ; work         ;
+;          |altsyncram_g0q1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |accelerator_top|b_buffer:B_BUFFER|altsyncram:mem_rtl_0|altsyncram_g0q1:auto_generated ; altsyncram_g0q1 ; work         ;
+;    |c_buffer:C_BUFFER|                    ; 0 (0)               ; 0 (0)                     ; 2048              ; 0          ; 0    ; 0            ; |accelerator_top|c_buffer:C_BUFFER                                                     ; c_buffer        ; work         ;
+;       |altsyncram:mem_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 2048              ; 0          ; 0    ; 0            ; |accelerator_top|c_buffer:C_BUFFER|altsyncram:mem_rtl_0                                ; altsyncram      ; work         ;
+;          |altsyncram_60q1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 2048              ; 0          ; 0    ; 0            ; |accelerator_top|c_buffer:C_BUFFER|altsyncram:mem_rtl_0|altsyncram_60q1:auto_generated ; altsyncram_60q1 ; work         ;
+;    |controller:CONTROLLER|                ; 50 (50)             ; 611 (611)                 ; 0                 ; 0          ; 0    ; 0            ; |accelerator_top|controller:CONTROLLER                                                 ; controller      ; work         ;
+;    |systolic_array:ARRAY|                 ; 36 (0)              ; 3000 (0)                  ; 0                 ; 64         ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY                                                  ; systolic_array  ; work         ;
+;       |pe:ROW[0].COL[0].PE|               ; 1 (1)               ; 49 (49)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[0].COL[0].PE                              ; pe              ; work         ;
+;       |pe:ROW[0].COL[1].PE|               ; 1 (1)               ; 50 (50)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[0].COL[1].PE                              ; pe              ; work         ;
+;       |pe:ROW[0].COL[2].PE|               ; 1 (1)               ; 50 (50)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[0].COL[2].PE                              ; pe              ; work         ;
+;       |pe:ROW[0].COL[3].PE|               ; 0 (0)               ; 50 (50)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[0].COL[3].PE                              ; pe              ; work         ;
+;       |pe:ROW[0].COL[4].PE|               ; 0 (0)               ; 50 (50)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[0].COL[4].PE                              ; pe              ; work         ;
+;       |pe:ROW[0].COL[5].PE|               ; 0 (0)               ; 50 (50)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[0].COL[5].PE                              ; pe              ; work         ;
+;       |pe:ROW[0].COL[6].PE|               ; 1 (1)               ; 50 (50)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[0].COL[6].PE                              ; pe              ; work         ;
+;       |pe:ROW[0].COL[7].PE|               ; 0 (0)               ; 41 (41)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[0].COL[7].PE                              ; pe              ; work         ;
+;       |pe:ROW[1].COL[0].PE|               ; 0 (0)               ; 48 (48)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[1].COL[0].PE                              ; pe              ; work         ;
+;       |pe:ROW[1].COL[1].PE|               ; 1 (1)               ; 49 (49)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[1].COL[1].PE                              ; pe              ; work         ;
+;       |pe:ROW[1].COL[2].PE|               ; 1 (1)               ; 50 (50)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[1].COL[2].PE                              ; pe              ; work         ;
+;       |pe:ROW[1].COL[3].PE|               ; 0 (0)               ; 50 (50)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[1].COL[3].PE                              ; pe              ; work         ;
+;       |pe:ROW[1].COL[4].PE|               ; 0 (0)               ; 50 (50)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[1].COL[4].PE                              ; pe              ; work         ;
+;       |pe:ROW[1].COL[5].PE|               ; 1 (1)               ; 50 (50)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[1].COL[5].PE                              ; pe              ; work         ;
+;       |pe:ROW[1].COL[6].PE|               ; 0 (0)               ; 50 (50)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[1].COL[6].PE                              ; pe              ; work         ;
+;       |pe:ROW[1].COL[7].PE|               ; 0 (0)               ; 41 (41)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[1].COL[7].PE                              ; pe              ; work         ;
+;       |pe:ROW[2].COL[0].PE|               ; 0 (0)               ; 48 (48)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[2].COL[0].PE                              ; pe              ; work         ;
+;       |pe:ROW[2].COL[1].PE|               ; 0 (0)               ; 48 (48)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[2].COL[1].PE                              ; pe              ; work         ;
+;       |pe:ROW[2].COL[2].PE|               ; 1 (1)               ; 49 (49)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[2].COL[2].PE                              ; pe              ; work         ;
+;       |pe:ROW[2].COL[3].PE|               ; 1 (1)               ; 50 (50)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[2].COL[3].PE                              ; pe              ; work         ;
+;       |pe:ROW[2].COL[4].PE|               ; 1 (1)               ; 50 (50)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[2].COL[4].PE                              ; pe              ; work         ;
+;       |pe:ROW[2].COL[5].PE|               ; 0 (0)               ; 50 (50)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[2].COL[5].PE                              ; pe              ; work         ;
+;       |pe:ROW[2].COL[6].PE|               ; 0 (0)               ; 50 (50)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[2].COL[6].PE                              ; pe              ; work         ;
+;       |pe:ROW[2].COL[7].PE|               ; 0 (0)               ; 41 (41)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[2].COL[7].PE                              ; pe              ; work         ;
+;       |pe:ROW[3].COL[0].PE|               ; 1 (1)               ; 48 (48)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[3].COL[0].PE                              ; pe              ; work         ;
+;       |pe:ROW[3].COL[1].PE|               ; 1 (1)               ; 48 (48)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[3].COL[1].PE                              ; pe              ; work         ;
+;       |pe:ROW[3].COL[2].PE|               ; 0 (0)               ; 48 (48)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[3].COL[2].PE                              ; pe              ; work         ;
+;       |pe:ROW[3].COL[3].PE|               ; 1 (1)               ; 49 (49)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[3].COL[3].PE                              ; pe              ; work         ;
+;       |pe:ROW[3].COL[4].PE|               ; 0 (0)               ; 50 (50)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[3].COL[4].PE                              ; pe              ; work         ;
+;       |pe:ROW[3].COL[5].PE|               ; 0 (0)               ; 50 (50)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[3].COL[5].PE                              ; pe              ; work         ;
+;       |pe:ROW[3].COL[6].PE|               ; 0 (0)               ; 50 (50)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[3].COL[6].PE                              ; pe              ; work         ;
+;       |pe:ROW[3].COL[7].PE|               ; 1 (1)               ; 41 (41)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[3].COL[7].PE                              ; pe              ; work         ;
+;       |pe:ROW[4].COL[0].PE|               ; 1 (1)               ; 48 (48)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[4].COL[0].PE                              ; pe              ; work         ;
+;       |pe:ROW[4].COL[1].PE|               ; 1 (1)               ; 48 (48)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[4].COL[1].PE                              ; pe              ; work         ;
+;       |pe:ROW[4].COL[2].PE|               ; 0 (0)               ; 48 (48)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[4].COL[2].PE                              ; pe              ; work         ;
+;       |pe:ROW[4].COL[3].PE|               ; 1 (1)               ; 48 (48)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[4].COL[3].PE                              ; pe              ; work         ;
+;       |pe:ROW[4].COL[4].PE|               ; 1 (1)               ; 49 (49)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[4].COL[4].PE                              ; pe              ; work         ;
+;       |pe:ROW[4].COL[5].PE|               ; 0 (0)               ; 50 (50)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[4].COL[5].PE                              ; pe              ; work         ;
+;       |pe:ROW[4].COL[6].PE|               ; 1 (1)               ; 50 (50)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[4].COL[6].PE                              ; pe              ; work         ;
+;       |pe:ROW[4].COL[7].PE|               ; 0 (0)               ; 41 (41)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[4].COL[7].PE                              ; pe              ; work         ;
+;       |pe:ROW[5].COL[0].PE|               ; 1 (1)               ; 48 (48)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[5].COL[0].PE                              ; pe              ; work         ;
+;       |pe:ROW[5].COL[1].PE|               ; 0 (0)               ; 48 (48)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[5].COL[1].PE                              ; pe              ; work         ;
+;       |pe:ROW[5].COL[2].PE|               ; 1 (1)               ; 48 (48)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[5].COL[2].PE                              ; pe              ; work         ;
+;       |pe:ROW[5].COL[3].PE|               ; 1 (1)               ; 48 (48)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[5].COL[3].PE                              ; pe              ; work         ;
+;       |pe:ROW[5].COL[4].PE|               ; 1 (1)               ; 48 (48)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[5].COL[4].PE                              ; pe              ; work         ;
+;       |pe:ROW[5].COL[5].PE|               ; 1 (1)               ; 49 (49)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[5].COL[5].PE                              ; pe              ; work         ;
+;       |pe:ROW[5].COL[6].PE|               ; 0 (0)               ; 50 (50)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[5].COL[6].PE                              ; pe              ; work         ;
+;       |pe:ROW[5].COL[7].PE|               ; 0 (0)               ; 41 (41)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[5].COL[7].PE                              ; pe              ; work         ;
+;       |pe:ROW[6].COL[0].PE|               ; 0 (0)               ; 48 (48)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[6].COL[0].PE                              ; pe              ; work         ;
+;       |pe:ROW[6].COL[1].PE|               ; 1 (1)               ; 48 (48)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[6].COL[1].PE                              ; pe              ; work         ;
+;       |pe:ROW[6].COL[2].PE|               ; 1 (1)               ; 48 (48)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[6].COL[2].PE                              ; pe              ; work         ;
+;       |pe:ROW[6].COL[3].PE|               ; 1 (1)               ; 48 (48)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[6].COL[3].PE                              ; pe              ; work         ;
+;       |pe:ROW[6].COL[4].PE|               ; 0 (0)               ; 48 (48)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[6].COL[4].PE                              ; pe              ; work         ;
+;       |pe:ROW[6].COL[5].PE|               ; 1 (1)               ; 48 (48)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[6].COL[5].PE                              ; pe              ; work         ;
+;       |pe:ROW[6].COL[6].PE|               ; 1 (1)               ; 49 (49)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[6].COL[6].PE                              ; pe              ; work         ;
+;       |pe:ROW[6].COL[7].PE|               ; 1 (1)               ; 41 (41)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[6].COL[7].PE                              ; pe              ; work         ;
+;       |pe:ROW[7].COL[0].PE|               ; 1 (1)               ; 40 (40)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[7].COL[0].PE                              ; pe              ; work         ;
+;       |pe:ROW[7].COL[1].PE|               ; 1 (1)               ; 40 (40)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[7].COL[1].PE                              ; pe              ; work         ;
+;       |pe:ROW[7].COL[2].PE|               ; 1 (1)               ; 40 (40)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[7].COL[2].PE                              ; pe              ; work         ;
+;       |pe:ROW[7].COL[3].PE|               ; 0 (0)               ; 40 (40)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[7].COL[3].PE                              ; pe              ; work         ;
+;       |pe:ROW[7].COL[4].PE|               ; 1 (1)               ; 40 (40)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[7].COL[4].PE                              ; pe              ; work         ;
+;       |pe:ROW[7].COL[5].PE|               ; 1 (1)               ; 40 (40)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[7].COL[5].PE                              ; pe              ; work         ;
+;       |pe:ROW[7].COL[6].PE|               ; 0 (0)               ; 40 (40)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[7].COL[6].PE                              ; pe              ; work         ;
+;       |pe:ROW[7].COL[7].PE|               ; 1 (1)               ; 32 (32)                   ; 0                 ; 1          ; 0    ; 0            ; |accelerator_top|systolic_array:ARRAY|pe:ROW[7].COL[7].PE                              ; pe              ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                     ;
++----------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                             ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++----------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; a_buffer:A_BUFFER|altsyncram:mem_rtl_0|altsyncram_g0q1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 64           ; 64           ; 64           ; 64           ; 4096 ; None ;
+; b_buffer:B_BUFFER|altsyncram:mem_rtl_0|altsyncram_g0q1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 64           ; 64           ; 64           ; 64           ; 4096 ; None ;
+; c_buffer:C_BUFFER|altsyncram:mem_rtl_0|altsyncram_60q1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 64           ; 32           ; 64           ; 32           ; 2048 ; None ;
++----------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+
+
++----------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary ;
++-------------------------------+--------------+
+; Statistic                     ; Number Used  ;
++-------------------------------+--------------+
+; Independent 18x18 plus 36     ; 64           ;
+; Total number of DSP blocks    ; 64           ;
+;                               ;              ;
+; Fixed Point Signed Multiplier ; 64           ;
++-------------------------------+--------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------+
+; State Machine - |accelerator_top|controller:CONTROLLER|state                                    ;
++--------------+------------+-------------+-------------+--------------+-------------+------------+
+; Name         ; state.DONE ; state.STORE ; state.DRAIN ; state.STREAM ; state.CLEAR ; state.IDLE ;
++--------------+------------+-------------+-------------+--------------+-------------+------------+
+; state.IDLE   ; 0          ; 0           ; 0           ; 0            ; 0           ; 0          ;
+; state.CLEAR  ; 0          ; 0           ; 0           ; 0            ; 1           ; 1          ;
+; state.STREAM ; 0          ; 0           ; 0           ; 1            ; 0           ; 1          ;
+; state.DRAIN  ; 0          ; 0           ; 1           ; 0            ; 0           ; 1          ;
+; state.STORE  ; 0          ; 1           ; 0           ; 0            ; 0           ; 1          ;
+; state.DONE   ; 1          ; 0           ; 0           ; 0            ; 0           ; 1          ;
++--------------+------------+-------------+-------------+--------------+-------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                           ;
++-----------------------------------------------------------+------------------------------------------------------------------+
+; Register name                                             ; Reason for Removal                                               ;
++-----------------------------------------------------------+------------------------------------------------------------------+
+; systolic_array:ARRAY|pe:ROW[7].COL[6].PE|A_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[6].COL[7].PE|B_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[7].COL[5].PE|A_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[5].COL[7].PE|B_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[7].COL[4].PE|A_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[4].COL[7].PE|B_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[7].COL[3].PE|A_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[3].COL[7].PE|B_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[7].COL[2].PE|A_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[2].COL[7].PE|B_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[7].COL[1].PE|A_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[1].COL[7].PE|B_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[7].COL[0].PE|A_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[0].COL[7].PE|B_valid_reg ;
+; controller:CONTROLLER|b_valid_pipe[63]                    ; Merged with controller:CONTROLLER|a_valid_pipe[63]               ;
+; systolic_array:ARRAY|pe:ROW[5].COL[0].PE|B_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[0].COL[5].PE|A_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[4].COL[0].PE|B_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[0].COL[4].PE|A_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[3].COL[1].PE|B_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[1].COL[3].PE|A_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[3].COL[0].PE|B_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[0].COL[3].PE|A_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[2].COL[1].PE|B_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[1].COL[2].PE|A_valid_reg ;
+; controller:CONTROLLER|a_valid_pipe[35,43,51,59]           ; Merged with controller:CONTROLLER|a_valid_pipe[27]               ;
+; controller:CONTROLLER|b_valid_pipe[27,35,43,51,59]        ; Merged with controller:CONTROLLER|a_valid_pipe[27]               ;
+; systolic_array:ARRAY|pe:ROW[2].COL[0].PE|B_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[0].COL[2].PE|A_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[2].COL[1].PE|A_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[1].COL[2].PE|B_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[1].COL[1].PE|B_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[1].COL[1].PE|A_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[2].COL[0].PE|A_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[0].COL[2].PE|B_valid_reg ;
+; controller:CONTROLLER|a_valid_pipe[26,34,42,50,58]        ; Merged with controller:CONTROLLER|a_valid_pipe[18]               ;
+; controller:CONTROLLER|b_valid_pipe[18,26,34,42,50,58]     ; Merged with controller:CONTROLLER|a_valid_pipe[18]               ;
+; systolic_array:ARRAY|pe:ROW[1].COL[0].PE|B_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[0].COL[1].PE|A_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[1].COL[0].PE|A_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[0].COL[1].PE|B_valid_reg ;
+; controller:CONTROLLER|a_valid_pipe[9,25,33,41,49,57]      ; Merged with controller:CONTROLLER|a_valid_pipe[17]               ;
+; controller:CONTROLLER|b_valid_pipe[9,17,25,33,41,49,57]   ; Merged with controller:CONTROLLER|a_valid_pipe[17]               ;
+; systolic_array:ARRAY|pe:ROW[0].COL[0].PE|B_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[0].COL[0].PE|A_valid_reg ;
+; controller:CONTROLLER|a_valid_pipe[8,16,24,32,40,48,56]   ; Merged with controller:CONTROLLER|a_valid_pipe[0]                ;
+; controller:CONTROLLER|b_valid_pipe[0,8,16,24,32,40,48,56] ; Merged with controller:CONTROLLER|a_valid_pipe[0]                ;
+; systolic_array:ARRAY|pe:ROW[6].COL[0].PE|B_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[0].COL[6].PE|A_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[4].COL[1].PE|B_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[1].COL[4].PE|A_valid_reg ;
+; controller:CONTROLLER|a_valid_pipe[44,52,60]              ; Merged with controller:CONTROLLER|a_valid_pipe[36]               ;
+; controller:CONTROLLER|b_valid_pipe[36,44,52,60]           ; Merged with controller:CONTROLLER|a_valid_pipe[36]               ;
+; systolic_array:ARRAY|pe:ROW[2].COL[2].PE|B_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[2].COL[2].PE|A_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[3].COL[0].PE|A_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[0].COL[3].PE|B_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[5].COL[1].PE|B_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[1].COL[5].PE|A_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[4].COL[0].PE|A_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[0].COL[4].PE|B_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[3].COL[2].PE|B_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[2].COL[3].PE|A_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[3].COL[1].PE|A_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[1].COL[3].PE|B_valid_reg ;
+; controller:CONTROLLER|a_valid_pipe[53,61]                 ; Merged with controller:CONTROLLER|a_valid_pipe[45]               ;
+; controller:CONTROLLER|b_valid_pipe[45,53,61]              ; Merged with controller:CONTROLLER|a_valid_pipe[45]               ;
+; systolic_array:ARRAY|pe:ROW[6].COL[1].PE|B_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[1].COL[6].PE|A_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[4].COL[1].PE|A_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[1].COL[4].PE|B_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[4].COL[2].PE|B_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[2].COL[4].PE|A_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[3].COL[2].PE|A_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[2].COL[3].PE|B_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[5].COL[0].PE|A_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[0].COL[5].PE|B_valid_reg ;
+; controller:CONTROLLER|a_valid_pipe[62]                    ; Merged with controller:CONTROLLER|a_valid_pipe[54]               ;
+; controller:CONTROLLER|b_valid_pipe[54,62]                 ; Merged with controller:CONTROLLER|a_valid_pipe[54]               ;
+; systolic_array:ARRAY|pe:ROW[4].COL[2].PE|A_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[2].COL[4].PE|B_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[5].COL[2].PE|B_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[2].COL[5].PE|A_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[3].COL[3].PE|B_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[3].COL[3].PE|A_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[5].COL[1].PE|A_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[1].COL[5].PE|B_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[6].COL[0].PE|A_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[0].COL[6].PE|B_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[4].COL[3].PE|A_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[3].COL[4].PE|B_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[6].COL[2].PE|B_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[2].COL[6].PE|A_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[4].COL[3].PE|B_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[3].COL[4].PE|A_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[5].COL[2].PE|A_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[2].COL[5].PE|B_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[6].COL[1].PE|A_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[1].COL[6].PE|B_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[4].COL[4].PE|B_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[4].COL[4].PE|A_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[5].COL[3].PE|B_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[3].COL[5].PE|A_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[5].COL[3].PE|A_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[3].COL[5].PE|B_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[6].COL[2].PE|A_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[2].COL[6].PE|B_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[5].COL[4].PE|B_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[4].COL[5].PE|A_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[6].COL[3].PE|B_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[3].COL[6].PE|A_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[5].COL[4].PE|A_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[4].COL[5].PE|B_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[6].COL[3].PE|A_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[3].COL[6].PE|B_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[6].COL[4].PE|B_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[4].COL[6].PE|A_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[5].COL[5].PE|B_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[5].COL[5].PE|A_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[6].COL[4].PE|A_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[4].COL[6].PE|B_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[6].COL[5].PE|B_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[5].COL[6].PE|A_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[6].COL[5].PE|A_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[5].COL[6].PE|B_valid_reg ;
+; systolic_array:ARRAY|pe:ROW[6].COL[6].PE|B_valid_reg      ; Merged with systolic_array:ARRAY|pe:ROW[6].COL[6].PE|A_valid_reg ;
+; controller:CONTROLLER|state~3                             ; Lost fanout                                                      ;
+; controller:CONTROLLER|state~4                             ; Lost fanout                                                      ;
+; controller:CONTROLLER|state~5                             ; Lost fanout                                                      ;
+; Total Number of Removed Registers = 123                   ;                                                                  ;
++-----------------------------------------------------------+------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 3611  ;
+; Number of registers using Synchronous Clear  ; 3602  ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 2642  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                          ;
++----------------------------------+-----------------------------+------+
+; Register Name                    ; Megafunction                ; Type ;
++----------------------------------+-----------------------------+------+
+; c_buffer:C_BUFFER|rd_data[0..31] ; c_buffer:C_BUFFER|mem_rtl_0 ; RAM  ;
+; b_buffer:B_BUFFER|rd_data[0..63] ; b_buffer:B_BUFFER|mem_rtl_0 ; RAM  ;
+; a_buffer:A_BUFFER|rd_data[0..63] ; a_buffer:A_BUFFER|mem_rtl_0 ; RAM  ;
++----------------------------------+-----------------------------+------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[0].COL[0].PE|acc[16] ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[0].COL[1].PE|acc[16] ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[0].COL[2].PE|acc[13] ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[3].COL[0].PE|acc[23] ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[4].COL[0].PE|acc[4]  ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[5].COL[0].PE|acc[5]  ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[0].COL[6].PE|acc[11] ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[7].COL[0].PE|acc[18] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[1].COL[1].PE|acc[28] ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[1].COL[2].PE|acc[5]  ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[3].COL[1].PE|acc[28] ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[4].COL[1].PE|acc[0]  ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[1].COL[5].PE|acc[13] ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[6].COL[1].PE|acc[12] ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[7].COL[1].PE|acc[25] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[2].COL[2].PE|acc[13] ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[2].COL[3].PE|acc[19] ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[2].COL[4].PE|acc[25] ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[5].COL[2].PE|acc[16] ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[6].COL[2].PE|acc[5]  ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[7].COL[2].PE|acc[12] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[3].COL[3].PE|acc[5]  ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[4].COL[3].PE|acc[9]  ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[5].COL[3].PE|acc[29] ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[6].COL[3].PE|acc[22] ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[3].COL[7].PE|acc[7]  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[4].COL[4].PE|acc[18] ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[5].COL[4].PE|acc[1]  ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[4].COL[6].PE|acc[7]  ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[7].COL[4].PE|acc[8]  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[5].COL[5].PE|acc[30] ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[6].COL[5].PE|acc[27] ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[7].COL[5].PE|acc[26] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[6].COL[6].PE|acc[8]  ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[6].COL[7].PE|acc[8]  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |accelerator_top|systolic_array:ARRAY|pe:ROW[7].COL[7].PE|acc[8]  ;
+; 4:1                ; 456 bits  ; 912 LEs       ; 0 LEs                ; 912 LEs                ; Yes        ; |accelerator_top|controller:CONTROLLER|b_pipe[435]                ;
+; 5:1                ; 128 bits  ; 384 LEs       ; 0 LEs                ; 384 LEs                ; Yes        ; |accelerator_top|controller:CONTROLLER|b_pipe[262]                ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |accelerator_top|controller:CONTROLLER|drain_count[6]             ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |accelerator_top|controller:CONTROLLER|store_count[3]             ;
+; 64:1               ; 32 bits   ; 1344 LEs      ; 1344 LEs             ; 0 LEs                  ; No         ; |accelerator_top|Mux17                                            ;
+; 12:1               ; 6 bits    ; 48 LEs        ; 30 LEs               ; 18 LEs                 ; No         ; |accelerator_top|controller:CONTROLLER|state                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Source assignments for c_buffer:C_BUFFER|altsyncram:mem_rtl_0|altsyncram_60q1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------+
+; Assignment                      ; Value              ; From ; To                             ;
++---------------------------------+--------------------+------+--------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                              ;
++---------------------------------+--------------------+------+--------------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Source assignments for b_buffer:B_BUFFER|altsyncram:mem_rtl_0|altsyncram_g0q1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------+
+; Assignment                      ; Value              ; From ; To                             ;
++---------------------------------+--------------------+------+--------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                              ;
++---------------------------------+--------------------+------+--------------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Source assignments for a_buffer:A_BUFFER|altsyncram:mem_rtl_0|altsyncram_g0q1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------+
+; Assignment                      ; Value              ; From ; To                             ;
++---------------------------------+--------------------+------+--------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                              ;
++---------------------------------+--------------------+------+--------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |accelerator_top ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; ARRAY_SIZE     ; 8     ; Signed Integer                                         ;
+; K              ; 64    ; Signed Integer                                         ;
+; DATA_WIDTH     ; 8     ; Signed Integer                                         ;
+; ACC_WIDTH      ; 32    ; Signed Integer                                         ;
+; ADDR_WIDTH     ; 6     ; Signed Integer                                         ;
+; C_ADDR_WIDTH   ; 6     ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: a_buffer:A_BUFFER ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; ROWS           ; 8     ; Signed Integer                        ;
+; K              ; 64    ; Signed Integer                        ;
+; DATA_WIDTH     ; 8     ; Signed Integer                        ;
+; ADDR_WIDTH     ; 6     ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: b_buffer:B_BUFFER ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; COLS           ; 8     ; Signed Integer                        ;
+; K              ; 64    ; Signed Integer                        ;
+; DATA_WIDTH     ; 8     ; Signed Integer                        ;
+; ADDR_WIDTH     ; 6     ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: controller:CONTROLLER ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; ROWS           ; 8     ; Signed Integer                            ;
+; COLS           ; 8     ; Signed Integer                            ;
+; K              ; 64    ; Signed Integer                            ;
+; DATA_WIDTH     ; 8     ; Signed Integer                            ;
+; ADDR_WIDTH     ; 6     ; Signed Integer                            ;
+; C_ADDR_WIDTH   ; 6     ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: systolic_array:ARRAY ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; ARRAY_SIZE     ; 8     ; Signed Integer                           ;
+; DATA_WIDTH     ; 8     ; Signed Integer                           ;
+; ACC_WIDTH      ; 32    ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: c_buffer:C_BUFFER ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; ROWS           ; 8     ; Signed Integer                        ;
+; COLS           ; 8     ; Signed Integer                        ;
+; ACC_WIDTH      ; 32    ; Signed Integer                        ;
+; ADDR_WIDTH     ; 6     ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: c_buffer:C_BUFFER|altsyncram:mem_rtl_0 ;
++------------------------------------+----------------------+-----------------------------+
+; Parameter Name                     ; Value                ; Type                        ;
++------------------------------------+----------------------+-----------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                     ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                  ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE              ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                     ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                     ;
+; WIDTH_A                            ; 32                   ; Untyped                     ;
+; WIDTHAD_A                          ; 6                    ; Untyped                     ;
+; NUMWORDS_A                         ; 64                   ; Untyped                     ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                     ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                     ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                     ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                     ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                     ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                     ;
+; WIDTH_B                            ; 32                   ; Untyped                     ;
+; WIDTHAD_B                          ; 6                    ; Untyped                     ;
+; NUMWORDS_B                         ; 64                   ; Untyped                     ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                     ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                     ;
+; RDCONTROL_REG_B                    ; CLOCK0               ; Untyped                     ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                     ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                     ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                     ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                     ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                     ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                     ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                     ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                     ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                     ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                     ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                     ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                     ;
+; BYTE_SIZE                          ; 8                    ; Untyped                     ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA             ; Untyped                     ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                     ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                     ;
+; INIT_FILE                          ; UNUSED               ; Untyped                     ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                     ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                     ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                     ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                     ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                     ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                     ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                     ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                     ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                     ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                     ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                     ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                     ;
+; CBXI_PARAMETER                     ; altsyncram_60q1      ; Untyped                     ;
++------------------------------------+----------------------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: b_buffer:B_BUFFER|altsyncram:mem_rtl_0 ;
++------------------------------------+----------------------+-----------------------------+
+; Parameter Name                     ; Value                ; Type                        ;
++------------------------------------+----------------------+-----------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                     ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                  ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE              ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                     ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                     ;
+; WIDTH_A                            ; 64                   ; Untyped                     ;
+; WIDTHAD_A                          ; 6                    ; Untyped                     ;
+; NUMWORDS_A                         ; 64                   ; Untyped                     ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                     ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                     ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                     ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                     ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                     ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                     ;
+; WIDTH_B                            ; 64                   ; Untyped                     ;
+; WIDTHAD_B                          ; 6                    ; Untyped                     ;
+; NUMWORDS_B                         ; 64                   ; Untyped                     ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                     ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                     ;
+; RDCONTROL_REG_B                    ; CLOCK0               ; Untyped                     ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                     ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                     ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                     ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                     ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                     ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                     ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                     ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                     ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                     ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                     ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                     ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                     ;
+; BYTE_SIZE                          ; 8                    ; Untyped                     ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA             ; Untyped                     ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                     ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                     ;
+; INIT_FILE                          ; UNUSED               ; Untyped                     ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                     ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                     ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                     ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                     ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                     ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                     ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                     ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                     ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                     ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                     ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                     ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                     ;
+; CBXI_PARAMETER                     ; altsyncram_g0q1      ; Untyped                     ;
++------------------------------------+----------------------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: a_buffer:A_BUFFER|altsyncram:mem_rtl_0 ;
++------------------------------------+----------------------+-----------------------------+
+; Parameter Name                     ; Value                ; Type                        ;
++------------------------------------+----------------------+-----------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                     ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                  ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE              ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                     ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                     ;
+; WIDTH_A                            ; 64                   ; Untyped                     ;
+; WIDTHAD_A                          ; 6                    ; Untyped                     ;
+; NUMWORDS_A                         ; 64                   ; Untyped                     ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                     ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                     ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                     ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                     ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                     ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                     ;
+; WIDTH_B                            ; 64                   ; Untyped                     ;
+; WIDTHAD_B                          ; 6                    ; Untyped                     ;
+; NUMWORDS_B                         ; 64                   ; Untyped                     ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                     ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                     ;
+; RDCONTROL_REG_B                    ; CLOCK0               ; Untyped                     ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                     ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                     ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                     ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                     ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                     ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                     ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                     ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                     ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                     ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                     ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                     ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                     ;
+; BYTE_SIZE                          ; 8                    ; Untyped                     ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA             ; Untyped                     ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                     ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                     ;
+; INIT_FILE                          ; UNUSED               ; Untyped                     ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                     ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                     ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                     ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                     ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                     ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                     ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                     ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                     ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                     ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                     ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                     ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                     ;
+; CBXI_PARAMETER                     ; altsyncram_g0q1      ; Untyped                     ;
++------------------------------------+----------------------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                   ;
++-------------------------------------------+----------------------------------------+
+; Name                                      ; Value                                  ;
++-------------------------------------------+----------------------------------------+
+; Number of entity instances                ; 3                                      ;
+; Entity Instance                           ; c_buffer:C_BUFFER|altsyncram:mem_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                              ;
+;     -- WIDTH_A                            ; 32                                     ;
+;     -- NUMWORDS_A                         ; 64                                     ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                           ;
+;     -- WIDTH_B                            ; 32                                     ;
+;     -- NUMWORDS_B                         ; 64                                     ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                 ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                           ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                   ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                               ;
+; Entity Instance                           ; b_buffer:B_BUFFER|altsyncram:mem_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                              ;
+;     -- WIDTH_A                            ; 64                                     ;
+;     -- NUMWORDS_A                         ; 64                                     ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                           ;
+;     -- WIDTH_B                            ; 64                                     ;
+;     -- NUMWORDS_B                         ; 64                                     ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                 ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                           ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                   ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                               ;
+; Entity Instance                           ; a_buffer:A_BUFFER|altsyncram:mem_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                              ;
+;     -- WIDTH_A                            ; 64                                     ;
+;     -- NUMWORDS_A                         ; 64                                     ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                           ;
+;     -- WIDTH_B                            ; 64                                     ;
+;     -- NUMWORDS_B                         ; 64                                     ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                 ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                           ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                   ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                               ;
++-------------------------------------------+----------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "systolic_array:ARRAY|pe:ROW[7].COL[7].PE"                                                  ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; A_out       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; B_out       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; A_valid_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; B_valid_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "systolic_array:ARRAY|pe:ROW[7].COL[6].PE"                                                  ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; B_out       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; B_valid_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "systolic_array:ARRAY|pe:ROW[7].COL[5].PE"                                                  ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; B_out       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; B_valid_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "systolic_array:ARRAY|pe:ROW[7].COL[4].PE"                                                  ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; B_out       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; B_valid_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "systolic_array:ARRAY|pe:ROW[7].COL[3].PE"                                                  ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; B_out       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; B_valid_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "systolic_array:ARRAY|pe:ROW[7].COL[2].PE"                                                  ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; B_out       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; B_valid_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "systolic_array:ARRAY|pe:ROW[7].COL[1].PE"                                                  ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; B_out       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; B_valid_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "systolic_array:ARRAY|pe:ROW[7].COL[0].PE"                                                  ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; B_out       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; B_valid_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "systolic_array:ARRAY|pe:ROW[6].COL[7].PE"                                                  ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; A_out       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; A_valid_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "systolic_array:ARRAY|pe:ROW[5].COL[7].PE"                                                  ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; A_out       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; A_valid_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "systolic_array:ARRAY|pe:ROW[4].COL[7].PE"                                                  ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; A_out       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; A_valid_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "systolic_array:ARRAY|pe:ROW[3].COL[7].PE"                                                  ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; A_out       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; A_valid_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "systolic_array:ARRAY|pe:ROW[2].COL[7].PE"                                                  ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; A_out       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; A_valid_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "systolic_array:ARRAY|pe:ROW[1].COL[7].PE"                                                  ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; A_out       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; A_valid_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "systolic_array:ARRAY|pe:ROW[0].COL[7].PE"                                                  ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; A_out       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; A_valid_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 3611                        ;
+;     ENA SCLR          ; 2642                        ;
+;     SCLR              ; 960                         ;
+;     plain             ; 9                           ;
+; arriav_lcell_comb     ; 760                         ;
+;     arith             ; 8                           ;
+;         1 data inputs ; 8                           ;
+;     normal            ; 752                         ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 14                          ;
+;         4 data inputs ; 34                          ;
+;         5 data inputs ; 4                           ;
+;         6 data inputs ; 691                         ;
+; arriav_mac            ; 64                          ;
+; boundary_port         ; 186                         ;
+; stratixv_ram_block    ; 160                         ;
+;                       ;                             ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 1.26                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:03     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Sat Sep 05 13:06:01 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off stage5 -c accelerator_top
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file systolic_array.v
+    Info (12023): Found entity 1: systolic_array File: C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/systolic_array.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file pe.v
+    Info (12023): Found entity 1: pe File: C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/pe.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file controller.v
+    Info (12023): Found entity 1: controller File: C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/controller.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file c_buffer.v
+    Info (12023): Found entity 1: c_buffer File: C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/c_buffer.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file b_buffer.v
+    Info (12023): Found entity 1: b_buffer File: C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/b_buffer.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file accelerator_top.v
+    Info (12023): Found entity 1: accelerator_top File: C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/accelerator_top.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file a_buffer.v
+    Info (12023): Found entity 1: a_buffer File: C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/a_buffer.v Line: 1
+Info (12127): Elaborating entity "accelerator_top" for the top level hierarchy
+Info (12128): Elaborating entity "a_buffer" for hierarchy "a_buffer:A_BUFFER" File: C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/accelerator_top.v Line: 134
+Info (12128): Elaborating entity "b_buffer" for hierarchy "b_buffer:B_BUFFER" File: C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/accelerator_top.v Line: 160
+Info (12128): Elaborating entity "controller" for hierarchy "controller:CONTROLLER" File: C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/accelerator_top.v Line: 213
+Info (12128): Elaborating entity "systolic_array" for hierarchy "systolic_array:ARRAY" File: C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/accelerator_top.v Line: 243
+Info (12128): Elaborating entity "pe" for hierarchy "systolic_array:ARRAY|pe:ROW[0].COL[0].PE" File: C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/systolic_array.v Line: 182
+Info (12128): Elaborating entity "c_buffer" for hierarchy "c_buffer:C_BUFFER" File: C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/accelerator_top.v Line: 303
+Info (19000): Inferred 3 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "c_buffer:C_BUFFER|mem_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 6
+        Info (286033): Parameter NUMWORDS_A set to 64
+        Info (286033): Parameter WIDTH_B set to 32
+        Info (286033): Parameter WIDTHAD_B set to 6
+        Info (286033): Parameter NUMWORDS_B set to 64
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+        Info (286033): Parameter RDCONTROL_REG_B set to CLOCK0
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "b_buffer:B_BUFFER|mem_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 64
+        Info (286033): Parameter WIDTHAD_A set to 6
+        Info (286033): Parameter NUMWORDS_A set to 64
+        Info (286033): Parameter WIDTH_B set to 64
+        Info (286033): Parameter WIDTHAD_B set to 6
+        Info (286033): Parameter NUMWORDS_B set to 64
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+        Info (286033): Parameter RDCONTROL_REG_B set to CLOCK0
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "a_buffer:A_BUFFER|mem_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 64
+        Info (286033): Parameter WIDTHAD_A set to 6
+        Info (286033): Parameter NUMWORDS_A set to 64
+        Info (286033): Parameter WIDTH_B set to 64
+        Info (286033): Parameter WIDTHAD_B set to 6
+        Info (286033): Parameter NUMWORDS_B set to 64
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+        Info (286033): Parameter RDCONTROL_REG_B set to CLOCK0
+Info (12130): Elaborated megafunction instantiation "c_buffer:C_BUFFER|altsyncram:mem_rtl_0"
+Info (12133): Instantiated megafunction "c_buffer:C_BUFFER|altsyncram:mem_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "32"
+    Info (12134): Parameter "WIDTHAD_A" = "6"
+    Info (12134): Parameter "NUMWORDS_A" = "64"
+    Info (12134): Parameter "WIDTH_B" = "32"
+    Info (12134): Parameter "WIDTHAD_B" = "6"
+    Info (12134): Parameter "NUMWORDS_B" = "64"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
+    Info (12134): Parameter "RDCONTROL_REG_B" = "CLOCK0"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_60q1.tdf
+    Info (12023): Found entity 1: altsyncram_60q1 File: C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/db/altsyncram_60q1.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "b_buffer:B_BUFFER|altsyncram:mem_rtl_0"
+Info (12133): Instantiated megafunction "b_buffer:B_BUFFER|altsyncram:mem_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "64"
+    Info (12134): Parameter "WIDTHAD_A" = "6"
+    Info (12134): Parameter "NUMWORDS_A" = "64"
+    Info (12134): Parameter "WIDTH_B" = "64"
+    Info (12134): Parameter "WIDTHAD_B" = "6"
+    Info (12134): Parameter "NUMWORDS_B" = "64"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
+    Info (12134): Parameter "RDCONTROL_REG_B" = "CLOCK0"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_g0q1.tdf
+    Info (12023): Found entity 1: altsyncram_g0q1 File: C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/db/altsyncram_g0q1.tdf Line: 27
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 3 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/output_files/accelerator_top.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 4753 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 152 input pins
+    Info (21059): Implemented 34 output pins
+    Info (21061): Implemented 4343 logic cells
+    Info (21064): Implemented 160 RAM segments
+    Info (21062): Implemented 64 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4980 megabytes
+    Info: Processing ended: Sat Sep 05 13:06:16 2026
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:26
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/output_files/accelerator_top.map.smsg.
+
+

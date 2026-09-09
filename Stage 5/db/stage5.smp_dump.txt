@@ -1,0 +1,9 @@
+
+State Machine - |accelerator_top|controller:CONTROLLER|state
+Name state.DONE state.STORE state.DRAIN state.STREAM state.CLEAR state.IDLE 
+state.IDLE 0 0 0 0 0 0 
+state.CLEAR 0 0 0 0 1 1 
+state.STREAM 0 0 0 1 0 1 
+state.DRAIN 0 0 1 0 0 1 
+state.STORE 0 1 0 0 0 1 
+state.DONE 1 0 0 0 0 1 

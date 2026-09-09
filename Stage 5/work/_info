@@ -1,0 +1,178 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 4
+va_buffer
+Z0 !s110 1788629058
+!i10b 1
+!s100 <Pa?6lElJ`hPcbj>DA_^32
+IDUPG^L2Z9l<[CjBYMAYd;0
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5
+w1788625171
+8C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/a_buffer.v
+FC:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/a_buffer.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1788629058.000000
+!s107 C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/a_buffer.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/a_buffer.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vaccelerator_top
+R0
+!i10b 1
+!s100 EIMGY@oWz^8@@K05_F=:U2
+IXRG6V;EM=<jQELW]>FO0e3
+R1
+R2
+w1788627895
+8C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/accelerator_top.v
+FC:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/accelerator_top.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/accelerator_top.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/accelerator_top.v|
+!i113 1
+R5
+R6
+vaccelerator_top_tb
+R0
+!i10b 1
+!s100 LLS@BKid^R9FX;Yhh8JRG3
+I1CHIhXCM:`MHEWH6;nGJj2
+R1
+R2
+w1788629050
+8C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/accelerator_top_tb.v
+FC:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/accelerator_top_tb.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/accelerator_top_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/accelerator_top_tb.v|
+!i113 1
+R5
+R6
+vb_buffer
+R0
+!i10b 1
+!s100 MEXedcYXV5eUn0067Hie^2
+I[h@G?DHB_4KZf4mHh4lGQ0
+R1
+R2
+w1788625314
+8C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/b_buffer.v
+FC:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/b_buffer.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/b_buffer.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/b_buffer.v|
+!i113 1
+R5
+R6
+vc_buffer
+R0
+!i10b 1
+!s100 ?6WiYH=D1o^Nd_cT6DXXf2
+I`:G23f46>gZmVcZmIj9ZT2
+R1
+R2
+w1788625884
+8C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/c_buffer.v
+FC:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/c_buffer.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/c_buffer.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/c_buffer.v|
+!i113 1
+R5
+R6
+vcontroller
+R0
+!i10b 1
+!s100 0LV:BD:2b]kk0S^Xd?XE11
+II4oDCPCAnM4NH7A6ajgX70
+R1
+R2
+w1788626065
+8C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/controller.v
+FC:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/controller.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/controller.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/controller.v|
+!i113 1
+R5
+R6
+vpe
+R0
+!i10b 1
+!s100 I8lVg:D@<75BGOZcSO=[J3
+Id1Y]kGeVCSn:Z[iA]jI?D2
+R1
+R2
+w1786573713
+8C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/pe.v
+FC:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/pe.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/pe.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/pe.v|
+!i113 1
+R5
+R6
+vsystolic_array
+R0
+!i10b 1
+!s100 ni;goRDQhVV:eme4;nYF13
+Im3_TNOQ1d4UOl8GTWBQd^0
+R1
+R2
+w1788551872
+8C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/systolic_array.v
+FC:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/systolic_array.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/systolic_array.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 5/systolic_array.v|
+!i113 1
+R5
+R6

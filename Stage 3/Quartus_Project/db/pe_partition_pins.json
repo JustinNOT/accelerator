@@ -1,0 +1,289 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "A_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "A_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "A_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "A_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "A_out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "A_out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "A_out[6]",
+					"strict" : false
+				},
+				{
+					"name" : "A_out[7]",
+					"strict" : false
+				},
+				{
+					"name" : "B_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "B_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "B_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "B_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "B_out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "B_out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "B_out[6]",
+					"strict" : false
+				},
+				{
+					"name" : "B_out[7]",
+					"strict" : false
+				},
+				{
+					"name" : "A_valid_out",
+					"strict" : false
+				},
+				{
+					"name" : "B_valid_out",
+					"strict" : false
+				},
+				{
+					"name" : "acc_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "acc_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "acc_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "acc_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "acc_out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "acc_out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "acc_out[6]",
+					"strict" : false
+				},
+				{
+					"name" : "acc_out[7]",
+					"strict" : false
+				},
+				{
+					"name" : "acc_out[8]",
+					"strict" : false
+				},
+				{
+					"name" : "acc_out[9]",
+					"strict" : false
+				},
+				{
+					"name" : "acc_out[10]",
+					"strict" : false
+				},
+				{
+					"name" : "acc_out[11]",
+					"strict" : false
+				},
+				{
+					"name" : "acc_out[12]",
+					"strict" : false
+				},
+				{
+					"name" : "acc_out[13]",
+					"strict" : false
+				},
+				{
+					"name" : "acc_out[14]",
+					"strict" : false
+				},
+				{
+					"name" : "acc_out[15]",
+					"strict" : false
+				},
+				{
+					"name" : "acc_out[16]",
+					"strict" : false
+				},
+				{
+					"name" : "acc_out[17]",
+					"strict" : false
+				},
+				{
+					"name" : "acc_out[18]",
+					"strict" : false
+				},
+				{
+					"name" : "acc_out[19]",
+					"strict" : false
+				},
+				{
+					"name" : "acc_out[20]",
+					"strict" : false
+				},
+				{
+					"name" : "acc_out[21]",
+					"strict" : false
+				},
+				{
+					"name" : "acc_out[22]",
+					"strict" : false
+				},
+				{
+					"name" : "acc_out[23]",
+					"strict" : false
+				},
+				{
+					"name" : "acc_out[24]",
+					"strict" : false
+				},
+				{
+					"name" : "acc_out[25]",
+					"strict" : false
+				},
+				{
+					"name" : "acc_out[26]",
+					"strict" : false
+				},
+				{
+					"name" : "acc_out[27]",
+					"strict" : false
+				},
+				{
+					"name" : "acc_out[28]",
+					"strict" : false
+				},
+				{
+					"name" : "acc_out[29]",
+					"strict" : false
+				},
+				{
+					"name" : "acc_out[30]",
+					"strict" : false
+				},
+				{
+					"name" : "acc_out[31]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "A_in[0]",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "A_in[1]",
+					"strict" : false
+				},
+				{
+					"name" : "A_in[2]",
+					"strict" : false
+				},
+				{
+					"name" : "A_in[3]",
+					"strict" : false
+				},
+				{
+					"name" : "A_in[4]",
+					"strict" : false
+				},
+				{
+					"name" : "A_in[5]",
+					"strict" : false
+				},
+				{
+					"name" : "A_in[6]",
+					"strict" : false
+				},
+				{
+					"name" : "A_in[7]",
+					"strict" : false
+				},
+				{
+					"name" : "B_in[0]",
+					"strict" : false
+				},
+				{
+					"name" : "B_in[1]",
+					"strict" : false
+				},
+				{
+					"name" : "B_in[2]",
+					"strict" : false
+				},
+				{
+					"name" : "B_in[3]",
+					"strict" : false
+				},
+				{
+					"name" : "B_in[4]",
+					"strict" : false
+				},
+				{
+					"name" : "B_in[5]",
+					"strict" : false
+				},
+				{
+					"name" : "B_in[6]",
+					"strict" : false
+				},
+				{
+					"name" : "B_in[7]",
+					"strict" : false
+				},
+				{
+					"name" : "A_valid_in",
+					"strict" : false
+				},
+				{
+					"name" : "B_valid_in",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

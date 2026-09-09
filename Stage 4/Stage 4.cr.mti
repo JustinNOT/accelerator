@@ -1,0 +1,22 @@
+{C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 4/Quartus_Project/systolic_array.v} {1 {vlog -work work -stats=none {C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 4/Quartus_Project/systolic_array.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module systolic_array
+
+Top level modules:
+	systolic_array
+
+} {} {}} {C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 4/Quartus_Project/systolic_array_8x8_tb.v} {1 {vlog -work work -stats=none {C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 4/Quartus_Project/systolic_array_8x8_tb.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module systolic_array_8x8_tb
+
+Top level modules:
+	systolic_array_8x8_tb
+
+} {} {}} {C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 4/Quartus_Project/pe.v} {1 {vlog -work work -stats=none {C:/Users/JT2ju/OneDrive/Documents/Accelerator/Stage 4/Quartus_Project/pe.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module pe
+
+Top level modules:
+	pe
+
+} {} {}}
